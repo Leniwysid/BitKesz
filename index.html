@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="desctiption" content="BitKesz jest firmą która oferuje usługi związane z koparkami kryptowalut, od zamówienia podzespołów do pełnej obsługi online" />
+
+    <link rel="icon" href="img/logo64.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+    <title>Bitkesz &mdash; budowa i obsługa koparek kryptowalut </title>
+  </head>
+  <body>
+
+    <header class="header">
+      <a href="#">
+      <img class="logo" alt="logo" src="img/logo.png"/>
+      </a>
+      
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href=#howId>Jak to działa</a></li>
+          <li><a class="main-nav-link" href=#preparedId>Gotowce</a></li>
+          <li><a class="main-nav-link" href=#galleryId>Usługi</a></li>
+          <li><a class="main-nav-link" href=#contactId>Kontakt</a></li>
+          <li>
+            <form class="login">
+              <input
+                type="text"
+                placeholder="User (ps)"
+                class="login__input login__input--user"
+              />
+              <input
+                type="password"
+                placeholder="PIN (2222)"
+                maxlength="4"
+                class="login__input login__input--pin"
+              />
+              <button class="login__btn">&rarr;</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="btn-mobile-nav"><ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon><ion-icon class="icon-mobile-nav" name="close-circle-outline"></ion-icon></button>
+    </header>
+
+    <main>
+      <section class="section-login display-none">
+        <div class="loggedIn container">
+          <img src="img/hello.png">
+          <p class="welcome">Witaj ponownie</p>
+          <p>W przyszłości będą tu zawarte dane, dostępne tylko dla zalogowanych użytkowników</p>
+          <p class="logout-section">Tymczasem, proszę wyloguj się</p>
+          <button class="logBtn btnLogout">Wyloguj</button>
+        </div>
+      </section>
+
+    <section class="mainApp">
+      <section class="section-main">
+        <div class="main">
+          <div class="main-text-box">
+            <h1 class="heading-primary">
+              Przygotujemy sprzęt, który będzie zarabiał dla Ciebie
+            </h1>
+            <p class="main-description">
+              Dołącz do współpracy z profesjonalistami w dziedzinie budowy i
+              obsługi koparek kryptowalut
+            </p>
+            <a href="#howId" class="btn  btn--full margin-right"
+              >Zacznij zarabiać krypto</a
+            >
+            <a href="#contactId" class="btn btn--out">Dowiedz się więcej &darr;</a>
+            <div class="happy-customers">
+              <div class="happy-img">
+                <img src="img/customer-1.jpg" alt="customer1"/>
+                <img src="img/customer-2.jpg" alt="customer2"/>
+                <img src="img/customer-3.jpg" alt="customer3"/>
+                <img src="img/customer-4.jpg" alt="customer4"/>
+                <img src="img/customer-5.jpg" alt="customer5"/>
+              </div>
+              <p class="customer-text">Zadowoliliśmy ponad 1000 klientów</p>
+            </div>
+          </div>
+          <div data-inviewport="fade-rotate"  class="main-img-box">
+            <img src="img/logoBTC.png" class="main-img" alt="bitcoin logo" />
+        </div>
+        
+      </section>
+
+      <section class="section-featured ">
+        <h2 class="make-window">Korzystamy z komponentów marek:</h2>
+            <div class="container make-img">
+              <img src="img/make2.png" alt="make2"/>
+              <img src="img/make5.png" alt="make5"/>
+              <img src="img/make3.png" alt="make3"/>
+              <img src="img/make4.png" alt="make4"/>
+              <img src="img/make1.png" alt="make1"/>
+            </div>
+      </section>
+
+        <section class="section-how" id="howId" >
+          <div class="container">
+            <span class="subheading">Sprawdź jak możemy Ci pomóc</span>
+            <h2 class="heading-secondary">W 3 krokach pokażemy jak wejdziesz w świat kryptowalut</h2>
+          </div>
+  <!-- krok 1 -->
+          <div class="container grid grid--2-col grid--align-center">
+            <div class="step-text-box">
+              <p class="step-number">1.</p>
+              <h3 class="heading-text">
+                Kontaktujesz się z nami w celu ustalenia warunków współpracy
+                </h3>
+                <p class="step-description">Pomagamy w otrzymaniu dofinansowania z miasta na zakup serwera obliczeniowego. Analizujemy na bieżąco rynek w celu zamówienia jak najbardziej wydajnych podzespołów</p>
+            </div>
+            <div data-inviewport="scale-in" class="step-img-box">
+              <img src="img/step1.png" class="step-img" alt="miner" />
+            </div>
+  <!-- krok 2 -->
+            <div data-inviewport="scale-in" class="step-img-box">
+              <img src="img/step2.png" class="step-img" alt="rig"/>
+            </div>
+            <div class="step-text-box">
+              <p class="step-number">2.</p>
+              <h3 class="heading-text">
+                Składamy części w całość
+                </h3>
+                <p class="step-description">Instalacje zaczynamy bezzwłocznie po otrzymaniu części, aktualizujemy bios płyty głównej</p>
+            </div>
+  <!-- krok 3 -->
+            <div class="step-text-box">
+              <p class="step-number">3.</p>
+              <h3 class="heading-text">
+                Podłączamy Cię do sieci
+                </h3>
+                <p class="step-description">Pomagamy Ci stworzyć portfel osobisty, następnie konfigurujemy z nim koparkę i zaczynasz zarabiać</p>
+            </div>
+
+            <div data-inviewport="scale-in" class="step-img-box">
+              <img src="img/step3.png" class="step-img" alt="connected"/>
+            </div>
+          </div>
+        </section>
+  <!--gotowce-->
+        <section class="section-prepared" id="preparedId" >
+          <div class="container make-container">
+            <h2 class="make-window">Możesz nabyć gotowe zestawy</h2>
+            <span class="subheading">Prezentowane jednostki są złożone z fabrycznie nowych części, skonfigurowane oraz przetestowane przez nas pod kątem sprawności oraz wydajności
+            </span>
+            <div class="container grid grid--3-col">
+              <div class="rig">
+                <img src="img/rig2.jpg"
+                  alt="rig2"
+                  class="rig-img"/>
+                  <div class="rig-content">
+                    <p class="rig-title">4x GeForce RTX 1660S</p>
+                    <ul class="rig-attributes">
+                      <li class="rig-attribute"><ion-icon class="rig-icon" name="speedometer-outline"></ion-icon><span>120 Mh/s</span></li>
+                      <li class="rig-attribute"><ion-icon class="rig-icon" name="flash-outline"></ion-icon><span>400 W</span></li>
+                      <li class="rig-attribute"><ion-icon name="cash-outline" class="rig-icon"></ion-icon><span>ETH/TON/RVN</span></li>
+                      <li class="rig-attribute"><ion-icon name="construct-outline" class="rig-icon"></ion-icon><span>Możliwość rozbudowy zestawu</span></li>
+                      <li class="rig-attribute"><ion-icon name="battery-full-outline" class="rig-icon"></ion-icon><span>niski pobór prądu</span></li>
+
+
+                        <btn id="btnModal" data-modal="modal1">Specyfikacja</btn>
+
+                      <div class="modal" id="modal1">
+                        <button class="close-modal">&times;</button>
+                        <p>Motherboard:
+                          TB250-BTC BIOSTAR</p>
+                        <p>CPU: Intel G4560 3.50GHz</p>
+                        <p>PSU: 2x SilentiumPC Fm2 750w</p>
+                        <p>RAM: Gskill DDR4 2133 8GB</p>
+                        <p>SSD: PNY CS900</p>
+                      </div>
+
+                    </ul>
+                  </div>
+              </div>
+
+              <div class="rig">
+                <img src="img/rig4.jpg"
+                alt="rig4" 
+                class="rig-img"/>
+                <div class="rig-content">
+                  <p class="rig-title">6x GeForce RTX 3060Ti</p>
+                  <ul class="rig-attributes">
+                    <li class="rig-attribute"><ion-icon name="speedometer-outline" class="rig-icon"></ion-icon><span>250 Mh/s</span></li>
+                    <li class="rig-attribute"><ion-icon name="flash-outline" class="rig-icon"></ion-icon><span>850 W</span></li>
+                    <li class="rig-attribute"><ion-icon name="cash-outline" class="rig-icon"></ion-icon><span>ETH/TON/RVN</span></li>
+                    <li class="rig-attribute"><ion-icon name="thermometer-outline" class="rig-icon"></ion-icon><span>Bardzo wydajne chłodzenie</span></li>
+                    <li class="rig-attribute"><ion-icon name="volume-mute-outline" class="rig-icon"></ion-icon><span>cicha jednostka</span></li>
+
+                      <btn id="btnModal" data-modal="modal2">Specyfikacja</btn>
+                      <div class="modal" id="modal2">
+                        <button class="close-modal">&times;</button>
+                        <p>Motherboard: Asus Prime Z270-P</p>
+                        <p>CPU: Intel i3 7100 3.9GHz</p>
+                        <p>PSU: 2x Be Quiet L11 CM-700W</p>
+                        <p>RAM: Goodram DDR4 2400 8GB</p>
+                        <p>SSD: PNY CS900</p>
+                      </div>
+
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rig">
+                <img src="img/rig7.jpg"
+                alt="rig7" 
+                class="rig-img"/>
+                <div class="rig-content">
+                  <p class="rig-title">Antminer Bitmain S9</p>
+                  <ul class="rig-attributes">
+                    <li class="rig-attribute"><ion-icon name="speedometer-outline" class="rig-icon"></ion-icon><span>13,5 Th/s</span></li>
+                    <li class="rig-attribute"><ion-icon name="flash-outline" class="rig-icon"></ion-icon><span>1350 W</span></li>
+                    <li class="rig-attribute"><ion-icon name="cash-outline" class="rig-icon"></ion-icon><span>BTC/PPC/DOGE</span></li>
+                    <li class="rig-attribute"><ion-icon name="grid-outline" class="rig-icon"></ion-icon><span>Sprzęt małych rozmiarów</span></li>
+                    <li class="rig-attribute"><ion-icon name="ear-outline" class="rig-icon"></ion-icon><span>Stosunkowo głośna</span></li>
+
+
+                      <btn id="btnModal" data-modal="modal3">Specyfikacja</btn>
+
+                      <div class="modal" id="modal3">
+                        <button class="close-modal">&times;</button>
+                        <p>CPU: 3x BM1387</p>
+                        <p>Chip count:	189</p>
+                        <p>Weight: 4200g</p>
+                        <p>Fan(s):	2</p>
+                      </div>
+
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </section>
+        <div class="container-gallery" id="galleryId">
+          <span class="subheading">Inne nasze usługi:
+          </span>
+        </div>
+  <!--galeria i usługi-->
+        <section class="section-gallery grid grid--2-col">
+          <div class="services">
+            <figure class="service">
+              <img class="service-img" src="img/gpu1.jpg" alt="gpu1">
+              <p class="service-name">&mdash; Serwis kart graficznych</p>
+              <blockquote class="service-text">
+                <p class="serv">Usługa skierowana dla właścicieli kart graficznych, które wymagają poprawy temperatur pracy lub dla tych, którzy chcą wydłużyć długość pracy kart graficznych.</p>
+                <p class="serv">1. Profesjonalna wymiana termopadów i past termoprzewodzących</p>
+                <p class="serv">2. Opcjonalna wymiana układu wentylacji</p>
+                <p class="serv">3. Każda usługa poprzedzona jest diagnostyką, na podstawie której ustalany jest zakres prac oraz finalna wycena.</p>
+              </blockquote>
+            </figure>
+
+            <figure class="service">
+              <img class="service-img" src="img/gpu2.jpg" alt="gpu2">
+              <p class="service-name">&mdash; Roczny support PREMIUM</p>
+              <blockquote class="service-text">
+                <p class="serv">Pakiet rocznego supportu z dedykowanym opiekunem - usługa PREMIUM. Wszystko odbywa się zdalnie poprzez naszą platformę, o każdej porze dnia i nocy</p>
+                <p class="serv">1. Pełne wsparcie techniczne przez okres 12 miesięcy</p>
+                <p class="serv">2. Pełną integrację z najnowszym oprogramowaniem do wydobywania kryptowalut</p>
+                <p class="serv">3. Dedykowana platforma do kontaktu z Twoim opiekunem</p>
+              </blockquote>
+            </figure>
+
+            <figure class="service">
+              <img class="service-img" src="img/gpu3.jpg" alt="gpu3">
+              <p class="service-name">&mdash; Konfiguracja Masternode'a</p>
+              <blockquote class="service-text">
+                <p class="serv">Usługa konfiguracji masternode'a - polega na udostępnianiu węzła na rzecz sieci w celu zdobywania wynagrodzenia w postaci monet.
+                Jest to najbardziej dynamicznie rosnący sektor branży kryptowalut w obecnym roku.</p>
+                <p class="serv">1. Staranna selekcja perspektywicznych walut poprzedzona analizowaniem rynku</p>
+                <p class="serv">2. Pełna konfiguracja trzech masternode'ów do trzech różnych kryptowalut oraz pełny abstrakt na temat danej waluty</p>
+              </blockquote>
+            </figure>
+
+            <figure class="service">
+              <img class="service-img" src="img/gpu4.jpg" alt="gpu4">
+              <p class="service-name">&mdash; Okresowy przegląd serwera obliczeniowego</p>
+              <blockquote class="service-text">
+                <p class="serv">Odkurzymy oraz sprawdzimy przewody oraz przejściówki pod kątem sprawności. Przepalone styki są częstym problemem awarii koparki kryptowalut</p>
+                <p class="serv">1.Kompleksowa diagnostyka:
+                podzespołów eksploatacyjnych, kart graficznych, układu zasilania, podzespołów bazowych, oprogramowania</p>
+                <p class="serv">2. Integracja z najnowszą wersją oprogramowania</p>
+                <p class="serv">3. Profesjonalna wymiana termopadów i past termoprzewodzących</p>
+              </blockquote>
+            </figure>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="img/gal/gal1.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal2.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal3.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal10.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal11.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal6.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal7.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal5.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal9.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal4.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal8.jpg" alt="gal1">
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/gal/gal12.jpg" alt="gal1">
+            </figure>
+          </div>
+        </section>
+
+        <section class="section-contact" id="contactId">
+          <div data-inviewport="scale-out" class="container">
+            <div class="contact">
+              <div class="contact-box">
+                <h2 class="heading-secondary">Wypełnij jeśli wyrażasz wolę kontaktu</h2>
+                <p class="contact-text">Jeżeli zostawisz nam swoje dane, nasz pracownik skontaktuje się z Tobą</p>
+
+                <form class="contact-form" action="#">
+                  <div>
+                    <label for="full-name">Twoje imię i nazwisko</label>
+                    <input id="full-name" type="text" placeholder="Jan Kowalski" required/>
+                  </div>
+
+                  <div>
+                    <label for="email">Twój adres E-mail</label>
+                    <input id="email" type="email" placeholder="janusz@abc.pl" required/>
+                  </div>
+                  
+                  <div>
+                    <label for="select-where">Gdzie się o nas dowiedziałeś?</label>
+                    <select id="select-where" required>
+                      <option value="">Wybierz jedną z opcji</option>
+                      <option value="friends">Znajomi lub rodzina</option>
+                      <option value="youtube">Na Youtube</option>
+                      <option value="facebook">Na Facebook</option>
+                      <option value="others">Gdzie indziej</option>
+                    </select>
+                  </div>
+
+                  <button class="btn btn-contact">Wyślij</button>
+
+                </form>
+              </div>
+
+              <div id="map"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    
+
+    <footer class="footer">
+      <div class="container grid grid--5-col">
+        <div class="logo-column">
+          <a href="#">
+            <img class="logo" alt="logo" src="img/logo.png"/>
+            </a>
+
+            <p class="copyright">Copyright &copy; 2022 by BitKesz Inc. All rights reserved.</p>
+        </div>
+
+        <div class="address-column">
+          <p class="footer-heading">Kontakt</p>
+          <address class="contacts">
+            <p>
+              Tarasowa 3, Lublin 20-819 Polska
+            </p>
+            <p>
+              <a class="footer-link" href="tel:504-975-505">504-975-505</a>
+              <a class="footer-link" href="mailto:leniwysid@gmail.com">leniwysid@gmail.com</a>
+            </p>
+
+            <ul class="social-links">
+              <li><a href="https://www.instagram.com/leniwysid/"><ion-icon name="logo-instagram"></ion-icon></a></li>
+              <li><a href="https://twitter.com/"><ion-icon name="logo-twitter"></ion-icon></a></li>
+              <li><a href="https://www.facebook.com/leniwysid/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            </ul>
+
+          </address>
+        </div>
+        <nav class="navi-column">
+          <p class="footer-heading">Konto</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Załóż konto</a></li>
+            <li><a class="footer-link" href="#">Zaloguj się</a></li>
+            <li><a class="footer-link" href="#">iOS App</a></li>
+            <li><a class="footer-link" href="#">Android App</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="navi-column">
+          <p class="footer-heading">O nas</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Firma</a></li>
+            <li><a class="footer-link" href="#">Dla biznesu</a></li>
+            <li><a class="footer-link" href="#">Patrnerzy</a></li>
+            <li><a class="footer-link" href="#">Kariera</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="navi-column">
+          <p class="footer-heading">Warunki</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Pomoc</a></li>
+            <li><a class="footer-link" href="#">Cookies</a></li>
+            <li><a class="footer-link" href="#">Prywatność</a></li>
+            <li><a class="footer-link" href="#">Regulamin</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+ <script src="/script.js"></script>
+
+  </body>
+</html>
